@@ -1,0 +1,79 @@
+<!-- <h1>hello {{(ser.teacherName | async)?.name}}!</h1>
+
+<input #studentName type="text" placeholder="student name">
+<input type="button" value="add student" (click)="addNewStudent(studentName.value)">
+<hr> -->
+<input type="button" value="try" (click)="forcePrettier(theCode.value)" />
+
+<br />
+<div class="container">
+  <div class="side-nav">
+    <!-- <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+          Students list
+        </button>
+        <button #myBtn *ngFor="let i of studentsArr$;let indexOfelement = index;" type="button" class="list-group-item list-group-item-action" (click)="openStudent(indexOfelement)">{{i.name}}</button>
+      </div> -->
+
+    <div class="card">
+      <div class="card-header">
+        <h5>your students:</h5>
+      </div>
+      <ul class="list-group list-group-flush list-group">
+        <!-- <li class="list-group-item list-group-item-action" *ngFor="let i of studentsArr$;let indexOfelement = index;" >
+            <span (click)="openStudent(indexOfelement)" style="display:inline-block">{{i.name}}</span>
+            <span style="display:inline-block;position: relative;" type="button" data-toggle="dropdown"  class="dropdown" (mouseover)="mouseOver = true">
+              >>>
+              <div class="dropdown-content">
+                <button class="dropdown-item" type="button">Copy student link</button>
+                <button class="dropdown-item" type="button">Delete dtudent</button>
+              </div>
+            </span>         
+           
+          </li> -->
+        <li
+          class="list-group-item list-group-item-action"
+          *ngFor="let i of studentsArr$; let indexOfelement = index"
+        >
+          <span style="cursor: pointer" (click)="openStudent(indexOfelement)">{{
+            i.name
+          }}</span>
+          <span data-toggle="dropdown" class="dropdown">
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 16 16"
+              class="bi bi-three-dots-vertical"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
+              />
+            </svg>
+
+            <div class="dropdown-content">
+              <button class="dropdown-item" type="button">
+                Copy student link
+              </button>
+              <button class="dropdown-item" type="button">
+                Delete dtudent
+              </button>
+            </div>
+          </span>
+        </li>
+        <li class="list-group-item list-group-item-action">
+          Vestibulum at eros
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main">
+    <br />
+    <pre #preTag>
+      <code  [ngClass]="cssClass" #theCode  style="white-space: pre-line;" contenteditable="true" [innerHTML]="studentsArr$[indexOfSelectedStudent]?.board"></code>
+    </pre>
+  </div>
+</div>

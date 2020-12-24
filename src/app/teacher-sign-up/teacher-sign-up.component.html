@@ -1,0 +1,50 @@
+<!-- <div *ngIf="auth.user | async as user; else showLogin">
+    <h1>Hello {{ user.displayName }}!</h1>
+    <button (click)="ser.logout()">Logout</button>
+  </div>
+  <ng-template #showLogin>
+    <p>Please login.</p> -->
+<!-- <input #name type="text" placeholder="name"><br> -->
+<!-- <input #email type="text" placeholder="email"><br> -->
+<!-- <input #password type="text" placeholder="password"><br> -->
+<!-- <input type="button" value="signUp" (click)="ser.signUp(name.value,email.value,password.value)">
+    <br> -->
+<!-- <button (click)="ser.login()">Login with Google</button> -->
+<div class="bg"></div>
+<img src="../../assets/team.svg" class="bg-img" />
+<br /><br />
+<form>
+  <h2>Sign up</h2>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputName1">Your Name</label>
+    <input #name type="text" class="form-control" placeholder="name" />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input
+      #email
+      type="text"
+      class="form-control"
+      placeholder="name@example.com"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input
+      #password
+      type="password"
+      class="form-control"
+      placeholder="your password"
+    />
+  </div>
+  <li
+    class="btn btn-primary"
+    (click)="ser.signUp(name.value, email.value, password.value)"
+  >
+    sign up
+  </li>
+</form>
+
+<!-- 
+  </ng-template> -->

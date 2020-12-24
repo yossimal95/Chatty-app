@@ -1,0 +1,31 @@
+form {
+  width: 250px;
+  display: block;
+  margin: auto;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 3px;
+  padding: 23px;
+}
+form button {
+  margin: auto;
+}
+h2 {
+  text-align: center;
+}
+.bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 65%;
+  background-color: #403474;
+  z-index: -2;
+  background-image: url(../../assets/simple-codelines.svg);
+  background-size: cover;
+}
+.bg-img {
+  position: absolute;
+  bottom: 10px;
+  z-index: -1;
+  left: 30px;
+  width: 420px;
+}

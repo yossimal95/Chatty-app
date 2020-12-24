@@ -1,0 +1,198 @@
+<nav style="width: 600px; display: block; margin: auto">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a
+      class="nav-item nav-link active"
+      id="nav-home-tab"
+      data-toggle="tab"
+      href="#nav-home"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >All teachers</a
+    >
+    <a
+      class="nav-item nav-link"
+      id="nav-profile-tab"
+      data-toggle="tab"
+      href="#nav-profile"
+      role="tab"
+      aria-controls="nav-profile"
+      aria-selected="false"
+      (click)="getAllCodes()"
+      >All saved codes</a
+    >
+    <a
+      class="nav-item nav-link"
+      id="nav-contact-tab"
+      data-toggle="tab"
+      href="#nav-contact"
+      role="tab"
+      aria-controls="nav-contact"
+      aria-selected="false"
+      >Contact</a
+    >
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div
+    class="tab-pane fade show active"
+    id="nav-home"
+    role="tabpanel"
+    aria-labelledby="nav-home-tab"
+    role="tablist"
+    style="width: 600px; display: block; margin: auto"
+    style="position: absolute; right: 20%;left:20%;"
+  >
+    <!-- <h3>Teachers list:</h3> -->
+    <table style="margin: auto;width: 600px;margin-top: 30px;" class="table">
+      
+      <thead>
+        <tr>
+          <th scope="col">Teacher name</th>
+          <th scope="col">Actions</th>
+
+        </tr>
+      </thead>
+
+      <tr *ngFor="let i of allTeacherArr; let theIndex = index">
+        <td>
+          {{ i.name }}
+        </td>
+        <td>
+          <button
+            title="view teacher's students"
+            type="button"
+            class="btn btn-link"
+            data-toggle="modal"
+            data-target="#exampleModalLong"
+            (click)="selectTeacher(theIndex)"
+          >
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"></path>
+  </svg>  
+
+          </button>
+          <button title="Delete" class="btn btn-link" (click)="delete(theIndex)">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-profile"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+    role="tablist"
+    style="position: absolute; right: 20%;left:20%;"
+  >
+    <table style="margin: auto;width: 600px;" class="table">
+        <thead>
+          <tr>
+            <th scope="col"> ID</th>
+            <th scope="col">File name</th>
+            <th scope="col">Teacher key</th>
+            <th scope="col">Date</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+
+      <tbody>
+      <tr *ngFor="let x of codes">
+        <td>{{ x.id }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.teacherKey }}</td>
+        <td>{{ x.date }}</td>
+        <td>
+          <button title="Delete" class="btn btn-link" (click)="deleteCode(x.id)">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+    </table>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-contact"
+    role="tabpanel"
+    aria-labelledby="nav-contact-tab"
+  >
+    ...
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModalLong"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          {{ allTeacherArr[selectedTeacher]?.name }}'s students:
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Writing Permission</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tr
+            *ngFor="let j of selectedTeacherStudentsList; let theIndex = index"
+          >
+            <td >{{ j.name }}</td>
+            <td >
+              {{ j.writePermission }}
+            </td>
+            <td>
+              <button title="Delete student" class="btn btn-link" (click)="deleteStudent(theIndex)">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+
+              </button>
+            </td>
+          </tr>
+        </table>
+
+        <!-- <p *ngFor="let j of selectedTeacherStudentsList">
+          {{ j.name }}
+        </p> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

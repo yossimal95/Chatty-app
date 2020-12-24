@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+.body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+.body {
+  overflow: hidden;
+  background-color: #fafbfc;
+  text-align: center;
+}
+.main-container {
+  height: 100%;
+  width: 100%;
+  /* background-color: blue; */
+  padding: 0px;
+  margin: auto;
+  text-align: center;
+}
+.menue {
+  width: 100%;
+  height: 8%;
+  background-color: #24292e;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+.menue-content {
+  width: 90%;
+  display: block;
+  margin: auto;
+  background-color: gold;
+}
+.menue-content a:first-child {
+  float: left;
+}
+.menue-content a {
+  margin-top: 10px;
+}
+.main-board {
+  width: 100% !important;
+  height: 92%;
+  padding: 0px;
+  margin: auto;
+  margin-right: 10px;
+  text-align: center;
+  /* background-color: brown; */
+  float: unset !important;
+}
+.tools-strip {
+  width: 100%;
+  height: 6%;
+  vertical-align: middle;
+  /* background-color: darkgreen; */
+}
+
+.content {
+  width: 97% !important;
+  height: 93%;
+  /* background-color: darkgoldenrod; */
+  text-align: center;
+  padding: 0px;
+  margin: auto;
+}
+pre {
+  height: 100%;
+  width: 100%;
+  /* background-color: darkgray; */
+  display: block;
+  padding: 0px;
+  margin: auto;
+  text-align: center;
+  overflow: visible;
+}
+code {
+  height: 97%;
+  width: 70%;
+  display: block;
+  background-color: darkslategrey;
+  padding: 0px;
+  margin: auto;
+  overflow: auto;
+  text-align: left;
+  color: ghostwhite;
+  padding: 15px;
+  padding-bottom: 400px;
+}
+.tools-strip button {
+  margin: 10px 10px 0px 0px;
+}
+#loading {
+  position: absolute !important;
+  height: 100% !important;
+  width: 100% !important;
+  z-index: 55555 !important;
+  background-color: white;
+  display: block;
+  top: 0;
+  text-align: center;
+  padding-top: 7%;
+}
+code div {
+  background-color: rgba(2, 2, 2, 0) !important;
+}

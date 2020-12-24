@@ -1,0 +1,153 @@
+<div class="help-me" style="position: absolute; z-index: -9999">
+  <a href="stusentLogIn">Student Log In Page</a>
+  <a href="savePage">Save Page Component</a>
+</div>
+<div
+  class="menue"
+  style="
+    position: absolute;
+    z-index: 1002;
+    background-color: rgba(80, 80, 80, 0);
+    width: 100%;
+  "
+>
+  <div class="menue-content">
+    <a href="">
+      <img width="35px" src="./assets/owl.png" alt="HOME" />
+    </a>
+    <!-- Button trigger modal -->
+    <!-- <button
+      id="about"
+      type="button"
+      class="btn btn-outline-light"
+      data-toggle="modal"
+      data-target="#exampleModalLong"
+    >
+      About this project
+    </button> -->
+    <a id="signUpLink" href="signUp" style="float: right; font-weight: bold"
+      >Sign up</a
+    >
+  </div>
+</div>
+
+<div class="waveWrapper waveAnimation">
+  <div class="waveWrapperInner bgTop">
+    <div
+      class="wave waveTop"
+      style="
+        background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');
+      "
+    ></div>
+  </div>
+  <div class="waveWrapperInner bgMiddle">
+    <div
+      class="wave waveMiddle"
+      style="
+        background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');
+      "
+    ></div>
+  </div>
+  <div class="waveWrapperInner bgBottom">
+    <div
+      class="wave waveBottom"
+      style="
+        background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');
+      "
+    ></div>
+  </div>
+</div>
+
+<div class="index-container">
+  <div class="index-login">
+    <app-teacher-sign-in></app-teacher-sign-in>
+    <!-- <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form> -->
+  </div>
+  <div class="index-about">
+    <h1 class="index-h1">Welcome<br />to Chatty!</h1>
+    <p class="index-p">
+      Chatty is a code-sharing system between teacher and student.<br />
+      It will help you move your code faster, more neatly and more beautifully.
+    </p>
+    <h2 class="index-h2">Sign in to start >></h2>
+    <a
+      href="signUp"
+      class="index-a btn btn-outline-light"
+      style="display: inline-block"
+      >Sign in to start</a
+    >
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModalLong"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          About this project
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre>
+- why?
+
+- with what? 
+          
+Angular libereries:
+- @angular/fire
+- highelight.JS
+- ngx-clipboard
+- firebase
+          
+firebase:
+- Realtime database
+- authentication
+          
+.NET core API:
+- EntityFramework
+- Linq
+- (the API is stored in Azure with the SQL database)
+          
+design:
+- bootstrap
+        </pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
